@@ -34,3 +34,17 @@ def get_security_types(security: Series) -> list:
                 security_types.append(token)
 
     return security_types
+
+
+def has_token(security: str, token: str) -> str:
+    if type(security) == str and token in security:
+        return 'да'
+    return 'нет'
+
+
+def check_true(text: str) -> int:
+    positive_tokens = ('да', 'возможен обмен')
+    for token in positive_tokens:
+        if token in text.lower():
+            return 1
+    return 0
